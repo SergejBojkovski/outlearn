@@ -1,0 +1,98 @@
+# Laravel EduLearn Platform - .gitignore
+
+# Laravel environment and configuration files
+.env
+.env.*
+!.env.example
+
+# PHP dependencies (Composer)
+/vendor
+composer.lock
+
+# JavaScript dependencies (NPM/Yarn)
+/node_modules
+package-lock.json
+yarn.lock
+
+# Laravel generated files
+/bootstrap/cache/*
+!bootstrap/cache/.gitignore
+/storage/framework/cache/*
+!storage/framework/cache/.gitignore
+/storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!storage/framework/views/.gitignore
+/storage/framework/testing/*
+!storage/framework/testing/.gitignore
+/storage/logs/*
+!storage/logs/.gitignore
+/storage/app/*
+!storage/app/.gitignore
+!storage/app/public/.gitignore
+/public/storage
+/public/hot
+/public/build
+
+# Build files
+/public/css
+/public/js
+/public/mix-manifest.json
+
+# IDE & editor files
+/.idea
+/.vscode
+*.sublime-project
+*.sublime-workspace
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+/.fleet
+
+# Testing files
+.phpunit.result.cache
+coverage.xml
+phpunit.xml
+
+# Local development files
+Homestead.json
+Homestead.yaml
+.vagrant
+.phpunit.result.cache
+npm-debug.log
+.sass-cache/
+docker-compose.override.yml
+
+# User uploaded content
+/public/uploads
+/public/images/profile
+/public/images/courses
+/storage/app/public/profile-photos
+/storage/app/public/course-images
+
+# System files
+.DS_Store
+Thumbs.db
+.directory
+*.swp
+*.swo
+
+# Educational platform specific
+/storage/app/private/certificates/*
+!storage/app/private/certificates/.gitignore
+/storage/app/private/submissions/*
+!storage/app/private/submissions/.gitignore
+/storage/app/private/course-materials/*
+!storage/app/private/course-materials/.gitignore
+
+# API keys and credentials
+stripe-credentials.json
+youtube-credentials.json
+zoom-credentials.json
+payment_config.php
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+*.old 

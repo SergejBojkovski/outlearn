@@ -72,4 +72,40 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+
+    /**
+     * Get completed lessons for the user.
+     */
+    public function completedLessons(): BelongsToMany
+    {
+        return $this->belongsToMany(Lesson::class)
+            ->withPivot('completed_at')
+            ->withTimestamps();
+    }
+
+    /**
+     * Get achievements earned by the user.
+     */
+    public function achievements(): BelongsToMany
+    {
+        return $this->belongsToMany(Achievement::class)
+            ->withPivot('awarded_at')
+            ->withTimestamps();
+    }
+
+    /**
+     * Get courses the user is enrolled in.
+     */
+    public function enrolledCourses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class);
+    }
+
+    /**
+     * Check if the user is an admin.
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role && $this->role->name === 'admin';
+    }
 }

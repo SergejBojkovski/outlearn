@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProfessorData extends Model
 {
@@ -12,14 +13,18 @@ class ProfessorData extends Model
     
     protected $fillable = [
         'user_id',
-        'department',
-        'specialization',
-        'biography',
-        'expertise',
-        'teaching_since'
+        'bio',
+        'qualifications',
+        'areas_of_expertise',
+        'teaching_philosophy',
+        'office_hours',
+        'contact_information'
     ];
     
-    public function user()
+    /**
+     * Get the user that this professor data belongs to.
+     */
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

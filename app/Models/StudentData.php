@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class StudentData extends Model
 {
@@ -10,13 +11,17 @@ class StudentData extends Model
     
     protected $fillable = [
         'user_id',
-        'student_number',
-        'enrollment_date',
-        'graduation_date',
-        'student_status'
+        'bio',
+        'academic_level',
+        'interests',
+        'learning_goals',
+        'educational_background'
     ];
     
-    public function user()
+    /**
+     * Get the user that this student data belongs to.
+     */
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
